@@ -1,0 +1,14 @@
+CLgen == 0.2.15
+graphviz == 0.6
+h5py == 2.7.0
+ipython == 5.1.0
+jupyter >= 1.0.0
+Keras == 2.0.0
+matplotlib >= 1.5.3
+pandas >= 0.19.1
+progressbar2 == 3.16.0
+pydot == 1.2.3
+pydot-ng == 1.0.0
+scikit-learn >= 0.18.1
+seaborn >= 0.7.1
+tensorflow-gpu == 1.0.1

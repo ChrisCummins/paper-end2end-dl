@@ -1,0 +1,18 @@
+diff --git a/clgen/__init__.py b/clgen/__init__.py
+index e0df4b5..7554eaf 100644
+--- a/clgen/__init__.py
++++ b/clgen/__init__.py
+@@ -279,8 +279,11 @@ def platform_info(printfn=print) -> None:
+         for pltfm in cl.get_platforms():
+             ctx = cl.Context(properties=[(cl.context_properties.PLATFORM, pltfm)])
+             for device in ctx.get_info(cl.context_info.DEVICES):
+-                devtype = cl.device_type.to_string(
+-                    device.get_info(cl.device_info.TYPE))
++                try:
++                    devtype = cl.device_type.to_string(
++                        device.get_info(cl.device_info.TYPE))
++                except ValueError:
++                    devtype = "unknown"
+                 dev = device.get_info(cl.device_info.NAME)
+ 
+                 printfn()

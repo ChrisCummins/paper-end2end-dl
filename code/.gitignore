@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+.ipython/kernels/e2e-dl/kernel.json
+build/
+
+# notebook scripts
+/*.py

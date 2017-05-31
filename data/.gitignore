@@ -1,0 +1,8 @@
+/case-study-a/kernels/
+/case-study-a/models/
+/case-study-a/predictions/
+
+/case-study-b/case-study-a-weights.h5
+/case-study-b/models/
+/case-study-b/our-models.tar.bz2
+/case-study-b/predictions/
