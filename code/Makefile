@@ -13,7 +13,10 @@ venv = source $(VIRTUAL_ENV)/bin/activate &&
 
 # list of Jupyter notebooks. This is used by the `run-batch` target, which
 # converts each of them to standalone python scripts and runs them.
-notebooks = $(patsubst %.ipynb,%,$(wildcard %.ipynb))
+notebooks = \
+	"Language Model" \
+	"Case Study A" \
+	$(NONE)
 
 # install Jupyter kernel and python packages
 # note that Keras pulls in tensorflow as a dependency, wheras we want to use
@@ -62,7 +65,7 @@ run:
 
 run-batch:
 	@for f in $(notebooks); do \
-		echo "$(venv) jupyter-nbconvert --to script \"$$f.pynb\""; \
+		echo "$(venv) jupyter-nbconvert --to script \"$$f.ipynb\""; \
 		$(venv) jupyter-nbconvert --to script "$$f.ipynb"; \
 		echo "$(PYTHON) \"$$f.py\""; \
 		$(PYTHON) "$$f.py"; \
