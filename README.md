@@ -6,7 +6,7 @@
 
 **Abstract:**
 > Accurate automatic optimization heuristics are necessary for dealing with the
-> complexity and diversity of modern hard- ware and software. Machine learning
+> complexity and diversity of modern hardware and software. Machine learning
 > is a proven technique for learning such heuristics, but its success is bound
 > by the quality of the features used. These features must be hand crafted by
 > developers through a combination of expert domain knowledge and trial and
