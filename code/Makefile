@@ -22,6 +22,7 @@ venv = source $(VIRTUAL_ENV)/bin/activate &&
 notebooks = \
 	"Language Model" \
 	"Case Study A" \
+	"Case Study B" \
 	$(NONE)
 
 # install Jupyter kernel and python packages

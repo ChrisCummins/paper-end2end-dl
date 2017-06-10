@@ -45,7 +45,7 @@ The following notebooks are available:
 
 1. **[Language Model.ipynb](Language%20Model.ipynb)** - demonstrates the transforming and encoding of OpenCL source code for machine learning.
 2. **[Case Study A.ipynb](Case%20Study%20A.ipynb)** - code for the Heterogeneous Mapping experiments in the paper.
-3. TODO: **Case Study B.ipynb** - code for the OpenCL Thread Coarsening experiments in the paper.
+3. **[Case Study B.ipynb](Case%20Study%20B.ipynb)** - code for the OpenCL Thread Coarsening experiments in the paper.
 
 #### 3.2. Data caching
 
