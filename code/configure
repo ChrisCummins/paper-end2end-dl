@@ -113,7 +113,7 @@ def main():
         print("USE_CUDA = " + to_python(cfg["cuda"]), file=outfile)
 
     print()
-    print("You may now run 'make install'.")
+    print("You may now run 'make'.")
 
 
 if __name__ == "__main__":
