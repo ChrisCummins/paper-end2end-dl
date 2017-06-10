@@ -1,18 +1,26 @@
 ## 1. Requirements
 
-* Ubuntu 16.04.
-* NVIDIA GPU with CUDA 8.0 and cuDNN.
+* Ubuntu Linux (we recommend 16.04).
+* Python 3.6.
+* libhdf5.
 
-On a system which meets the above requirements, use the command `./bootstrap.sh` to print installation instructions for any system-wide packages which are not already present. Install these automatically using:
+For your convenience, we provide a script `./bootstrap.sh` to automate the
+installation of these requirements on Ubuntu Linux. The script will print
+installation commands for any missing requirements. Install these automatically
+using:
 
 ```sh
 $ ./bootstrap.sh | bash
 ```
 
+Additionally, we recommend the use of CUDA on an NVIDIA GPU to speed up TensorFlow experiments. Installation instructions are available [here](https://www.tensorflow.org/install/install_linux#nvidia_requirements_to_run_tensorflow_with_gpu_support).
+
 ## 2. Installation
 
 ```sh
-$ make install
+$ ./configure
+... # answer yes/no prompts
+$ make
 ```
 
 This does not require sudo privileges. The only directory modified outside of this repository is `~/.ipython/kernels`.
@@ -41,7 +49,7 @@ The following notebooks are available:
 
 #### 3.2. Data caching
 
-The experiments are long running and computationally expensive. Runtimes can range from hours to days, depending on hardware. To amortize these costs, expensive experimental data is cached for re-use upon production. If you would like to remove any cached data, run:
+Many of the experiments are long running and computationally expensive. Run times can range from hours to days, depending on hardware. To amortize these costs, expensive experimental data is cached for re-use upon production. If you would like to remove any cached data, run:
 
 ```sh
 $ make -C ../data refresh
@@ -50,7 +58,7 @@ $ make -C ../data refresh
 
 #### 3.3. Headless execution
 
-Running long running experiments in Jupyter Notebooks can cause a hassle, as any loss of connection or closing the browser window may halt execution. Because of this, we added a headless execution mode, which converts the Jupyter Notebooks into standalone Python scripts. These scripts will produce the cached data which can be viewed from the Jupyter Notebooks. To use this headless execution mode, run:
+Running long running experiments in Jupyter Notebooks can be a hassle, as any loss of connection to the notebook may halt execution. Because of this, we provide a headless execution mode, which converts the Jupyter Notebooks into standalone Python scripts. These scripts will produce the cached data which can be viewed from the Jupyter Notebooks. To use this headless execution mode, run:
 
 ```sh
 $ make run-batch
@@ -58,7 +66,7 @@ $ make run-batch
 
 #### 3.4. Using our cached data
 
-In addition to the code necessary to re-produce our experiments, we also supply the actual experimental results we used for the paper, as obtained from our hardware. To verify the results using our cached data run:
+In addition to the code necessary to re-produce our experiments, we also supply the actual experimental results we used for the paper, as obtained from our hardware. To unpack our cached data, run:
 
 ```sh
 $ make -C ../data all
@@ -70,7 +78,7 @@ Note that this replaces any cached data you may have produced.
 ## 4. Uninstallation
 
 ```sh
-$ make uninstall
+$ make clean
 ```
 
 This does not require sudo privileges. The only directory modified outside of this repository is `~/.ipython/kernels`.

@@ -2,5 +2,9 @@
 .ipython/kernels/e2e-dl/kernel.json
 build/
 
+# configuration files
+.config.json
+.config.make
+
 # notebook scripts
 /*.py
