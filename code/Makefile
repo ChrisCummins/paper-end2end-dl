@@ -1,8 +1,14 @@
-.DEFAULT_GOAL = help
+.DEFAULT_GOAL = all
 
 SHELL = /bin/bash
 
-.PHONY: install uninstall run run-batch help
+# configuration
+ifeq (,$(wildcard .config.make))
+$(error Please run ./configure first)
+endif
+include .config.make
+
+.PHONY: all clean run run-batch help
 
 VIRTUAL_ENV = $(PWD)/build/deeptune
 PYTHON_VERSION = 3.6
@@ -16,6 +22,7 @@ venv = source $(VIRTUAL_ENV)/bin/activate &&
 notebooks = \
 	"Language Model" \
 	"Case Study A" \
+	"Case Study B" \
 	$(NONE)
 
 # install Jupyter kernel and python packages
@@ -24,13 +31,15 @@ notebooks = \
 # installing Keras, but there may be other valuable dependencies lost. My
 # approach is to simply uninstall the tensorflow pulled in by keras after
 # install. See: https://github.com/fchollet/keras/issues/5766
-install: .ipython/kernels/e2e-dl/kernel.json $(VIRTUAL_ENV)/bin/clgen
+all: .ipython/kernels/e2e-dl/kernel.json $(VIRTUAL_ENV)/bin/clgen
 	$(MAKE) -C ../data essential
 	mkdir -p ~/.ipython/kernels
 	test -d ~/.ipython/kernels/e2e-dl || cp -Rv .ipython/kernels/e2e-dl ~/.ipython/kernels
 	$(venv) $(PIP) install -r requirements.txt
+ifeq ($(USE_CUDA),1)
 	$(venv) $(PIP) uninstall -y tensorflow
 	$(venv) $(PIP) install --upgrade --force-reinstall tensorflow-gpu==1.0.1
+endif
 
 # make Jupyter kernel
 .ipython/kernels/e2e-dl/kernel.json: .ipython/kernels/e2e-dl/kernel.json.template
@@ -53,8 +62,7 @@ $(VIRTUAL_ENV)/bin/clgen: $(VIRTUAL_ENV)/bin/activate
 $(VIRTUAL_ENV)/bin/activate:
 	virtualenv -p python$(PYTHON_VERSION) $(VIRTUAL_ENV)
 
-uninstall:
-	$(MAKE) -C ../data clean
+clean:
 	rm -rf  .ipython/kernels/e2e-dl/kernel.json \
 		~/.ipython/kernels/e2e-dl \
 		$(VIRTUAL_ENV) \
@@ -73,4 +81,6 @@ run-batch:
 	done
 
 help:
-	@echo "usage: make {install,run,run-batch,uninstall}"
+	@echo "usage: make {all,clean,run,run-batch}"
+	@echo
+	@echo "See README.md for details"

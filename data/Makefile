@@ -13,6 +13,8 @@ all_archives = \
 	case-study-a/kernels \
 	case-study-a/models \
 	case-study-a/predictions \
+	case-study-b/models \
+	case-study-b/predictions \
 	$(NULL)
 
 essential: $(essential_archives)
@@ -30,6 +32,9 @@ case-study-a/models: case-study-a/our-models.tar.bz2
 case-study-a/predictions: case-study-a/our-predictions.tar.bz2
 	cd $(dir $<) && tar xjf $(notdir $<)
 	touch $@
+
+case-study-b/our-models.tar.bz2: case-study-b/our-models-aa case-study-b/our-models-ab
+	cat $< > $@
 
 refresh:
 	$(MAKE) clean
