@@ -1,19 +1,24 @@
 ## 1. Requirements
 
-* Ubuntu Linux (we recommend 16.04).
+* GNU / Linux (we recommend Ubuntu 16.04).
 * Python 3.6.
 * libhdf5.
 
+Additionally, we recommend the use of CUDA on an NVIDIA GPU to speed up TensorFlow experiments. Installation instructions are available [here](https://www.tensorflow.org/install/install_linux#nvidia_requirements_to_run_tensorflow_with_gpu_support).
+
+**Automatic install:**
+
 For your convenience, we provide a script `./bootstrap.sh` to automate the
-installation of these requirements on Ubuntu Linux. The script will print
-installation commands for any missing requirements. Install these automatically
-using:
+installation of these dependencies. Supported Linux distributions are: Ubuntu,
+CentOS, and Arch Linux. The script will print installation commands for any
+missing requirements. These can either be typed in by hand, or executed
+automatically using:
 
 ```sh
 $ ./bootstrap.sh | bash
 ```
 
-Additionally, we recommend the use of CUDA on an NVIDIA GPU to speed up TensorFlow experiments. Installation instructions are available [here](https://www.tensorflow.org/install/install_linux#nvidia_requirements_to_run_tensorflow_with_gpu_support).
+Installing system-wide dependencies requires sudo privileges. You may be prompted for your password. Please note, CUDA must be installed manually.
 
 ## 2. Installation
 
@@ -23,7 +28,7 @@ $ ./configure
 $ make
 ```
 
-This does not require sudo privileges. The only directory modified outside of this repository is `~/.ipython/kernels`.
+The configure script determines python packages to install, based on the availability of CUDA. Installation does not require sudo privileges. The only directory modified outside of this repository is `~/.ipython/kernels`.
 
 ## 3. Running the Code
 
@@ -81,4 +86,6 @@ Note that this replaces any cached data you may have produced.
 $ make clean
 ```
 
-This does not require sudo privileges. The only directory modified outside of this repository is `~/.ipython/kernels`.
+This does not require sudo privileges. The only directory modified outside of
+this repository is `~/.ipython/kernels`. System-wide requirements are not
+removed.
