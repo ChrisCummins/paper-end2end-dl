@@ -1,5 +1,5 @@
 # End-to-end Deep Learning of Optimization Heuristics
-[Chris Cummins](http://chriscummins.cc/),
+[Chris Cummins](https://chriscummins.cc/),
 [Pavlos Petoumenos](http://homepages.inf.ed.ac.uk/ppetoume/),
 [Zheng Wang](http://www.lancaster.ac.uk/staff/wangz3/),
 [Hugh Leather](http://homepages.inf.ed.ac.uk/hleather/).
@@ -47,7 +47,6 @@ See [`code/README.md`](code/) for instructions on re-producing the experiments.
 
 * EPSRC grants
   EP/L01503X/1 ([CDT in Pervasive Parallelism](http://pervasiveparallelism.inf.ed.ac.uk/)),
-  EP/L000055/1 (ALEA),
   EP/M01567X/1 (SANDeRs),
-  EP/M015823/1,
-  and EP/M015793/1 (DIVIDEND)
+  EP/M015793/1 (DIVIDEND),
+  and EP/P003915/1 (SUMMER).
