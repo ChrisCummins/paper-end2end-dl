@@ -100,3 +100,10 @@
 \usepackage[firstpage]{draftwatermark}
 \SetWatermarkText{\hspace*{5.85in}\raisebox{8.8in}{\includegraphics[]{img/ae-pact.pdf}}}
 \SetWatermarkAngle{0}
+
+% Squeeze caption sizes
+\usepackage{caption}
+\DeclareCaptionFont{mysize}{\fontsize{9}{9}\selectfont}
+\captionsetup{font=mysize}
+\captionsetup[table]{font={mysize}}
+\captionsetup[figure]{font={mysize}}
