@@ -4,6 +4,12 @@
 [Zheng Wang](http://www.lancaster.ac.uk/staff/wangz3/),
 [Hugh Leather](http://homepages.inf.ed.ac.uk/hleather/).
 
+**Best Paper Nominee PACT'17**
+
+<a href="https://github.com/ChrisCummins/paper-end2end-dl/raw/master/paper.pdf">
+  <img src="paper.png" height="325">
+</a>
+
 **Abstract:**
 > Accurate automatic optimization heuristics are necessary for dealing with the
 > complexity and diversity of modern hardware and software. Machine learning is
