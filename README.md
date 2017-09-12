@@ -6,6 +6,9 @@
 
 **Best Paper Nominee PACT'17**
 
+<a href="https://speakerdeck.com/chriscummins/end-to-end-deep-learning-of-optimization-heuristics">
+  <img src="slides.png" height="325">
+</a>
 <a href="https://github.com/ChrisCummins/paper-end2end-dl/raw/master/paper.pdf">
   <img src="paper.png" height="325">
 </a>
