@@ -4,7 +4,7 @@
 [Zheng Wang](http://www.lancaster.ac.uk/staff/wangz3/),
 [Hugh Leather](http://homepages.inf.ed.ac.uk/hleather/).
 
-**Best Paper Nominee PACT'17**
+**Winner of Best Paper Award PACT'17**
 
 <a href="https://speakerdeck.com/chriscummins/end-to-end-deep-learning-of-optimization-heuristics">
   <img src="slides.png" height="325">
