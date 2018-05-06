@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -eu
 
 usage() {
@@ -13,7 +14,7 @@ main() {
     fi
     set -u
 
-    if python -mplatform | grep -qi Ubuntu ; then
+    if python -mplatform | grep -qi Ubuntu; then
         echo '# guessed distribution: Ubuntu'
 
         local ubuntu_version="$(lsb_release -r | sed -r 's/^Release:\s+//')"
@@ -21,7 +22,7 @@ main() {
             echo "# warning: Ubuntu $ubuntu_version is unsupported"
         fi
 
-        if dpkg -s python3.6 &>/dev/null ; then
+        if dpkg -s python3.6 &> /dev/null; then
             echo '# python3.6: installed'
         else
             echo '# install python3.6:'
@@ -30,13 +31,13 @@ main() {
             echo 'sudo apt-get install -y python3.6 python3.6-venv python3.6-dev'
         fi
 
-        if dpkg -s libhdf5-dev &>/dev/null ; then
+        if dpkg -s libhdf5-dev &> /dev/null; then
             echo '# libhdf5-dev: installed'
         else
             echo '# install libhdf5-dev:'
             echo 'sudo apt-get install -y libhdf5-dev'
         fi
-    elif python -mplatform | grep -qi CentOS ; then
+    elif python -mplatform | grep -qi CentOS; then
         echo '# guessed distribution: CentOS'
 
         echo '#install python3.6:'
@@ -48,7 +49,7 @@ main() {
 
         echo '# install libhdf5'
         echo 'sudo yum -y install hdf5 hdf5-devel'
-    elif python -mplatform | grep -qi Arch ; then
+    elif python -mplatform | grep -qi Arch; then
         echo '# guessed distribution: Arch Linux'
 
         echo '# install python3.6:'
@@ -63,4 +64,5 @@ main() {
         echo '# warning: Unsupported OS detected'
     fi
 }
+
 main $@
