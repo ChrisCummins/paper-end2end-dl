@@ -56,8 +56,8 @@ See [`code/README.md`](code/) for instructions on re-producing the experiments.
 
 The code for this paper (everything in the directory `code`) is released under
 the terms of the GPLv3 license. See [LICENSE](LICENSE) for details. Everything
-else (the LaTeX sources and data) are unlicensed, please contact me before
-using.
+else (i.e. the LaTeX sources and data sets) are unlicensed, please contact
+Chris Cummins <chrisc.101@gmail.com> before using.
 
 ## Acknowledgements
 
