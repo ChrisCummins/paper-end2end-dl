@@ -57,7 +57,7 @@ The heuristic model takes the learned representations of the source code and aux
 We first normalize the values. Normalization is necessary because the auxiliary inputs can have any values, whereas the language model activations are in the range [0,1]. If we did not normalize, then scaling the auxiliary inputs could affect the training of the heuristic model. Normalization occurs in batches. We use the normalization method of ~\cite{Ioffe2015a}, in which each scalar of the heuristic model's inputs $x_1 \ldots x_n$ is normalized to a mean 0 and standard deviation of 1:
 %
 \begin{equation}
-x_i' = \upgamma_i \frac{x_i - E(x_i)}{\sqrt{Var(x_i)}} + \beta_i
+  x_i' = \upgamma_i \frac{x_i - E(x_i)}{\sqrt{Var(x_i)}} + \beta_i
 \end{equation}
 %
 where $\upgamma$ and $\beta$ are scale and shift parameters, learned during training.
@@ -74,7 +74,7 @@ DeepTune is trained in the same manner as prior works, the key difference being 
 The model is trained with Stochastic Gradient Descent (SGD), using the Adam optimizer~\cite{Kingma2015}. For training data $X_1 \ldots X_n$, SGD attempts to find the model parameters $\Theta$ that minimize the output of a loss function:
 %
 \begin{equation}
-\Theta = \argmin_{\Theta} \frac{1}{n} \sum_{i=1}^{n} \ell \left(X_i, \Theta \right)
+  \Theta = \argmin_{\Theta} \frac{1}{n} \sum_{i=1}^{n} \ell \left(X_i, \Theta \right)
 \end{equation}
 %
 where loss function $\ell \left(x, \Theta \right)$ computes the logarithmic difference between the predicted and expected values.

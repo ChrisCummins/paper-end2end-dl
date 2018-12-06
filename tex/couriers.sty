@@ -14,25 +14,25 @@
 ]
 \RequirePackage{keyval}
 \define@key{Cou}{scaled}[0.95]{%
-  \def\Cr@scale{#1}}
+\def\Cr@scale{#1}}
 \def\ProcessOptionsWithKV#1{%
-  \let\@tempc\relax
-  \let\Cr@tempa\@empty
-  \@for\CurrentOption:=\@classoptionslist\do{%
-    \@ifundefined{KV@#1@\CurrentOption}%
-    {}%
-    {\edef\Cr@tempa{\Cr@tempa,\CurrentOption,}}%
-  }%
-  \edef\Cr@tempa{%
-    \noexpand\setkeys{#1}{%
-      \Cr@tempa\@ptionlist{\@currname.\@currext}%
-    }%
-  }%
-  \Cr@tempa
+\let\@tempc\relax
+\let\Cr@tempa\@empty
+\@for\CurrentOption:=\@classoptionslist\do{%
+\@ifundefined{KV@#1@\CurrentOption}%
+{}%
+{\edef\Cr@tempa{\Cr@tempa,\CurrentOption,}}%
+}%
+\edef\Cr@tempa{%
+\noexpand\setkeys{#1}{%
+\Cr@tempa\@ptionlist{\@currname.\@currext}%
+}%
+}%
+\Cr@tempa
 }
 \ProcessOptionsWithKV{Cou}
 \AtEndOfPackage{%
-  \let\@unprocessedoptions\relax
+\let\@unprocessedoptions\relax
 }
 \renewcommand{\ttdefault}{pcrs}
 \endinput

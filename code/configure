@@ -17,10 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with CLgen.  If not, see <http://www.gnu.org/licenses/>.
 #
-import os
-import sys
-
 import json
+import sys
 from argparse import ArgumentParser
 
 
@@ -98,7 +96,8 @@ def main():
   # get input from user
   if not args.batch:
     if not cfg["cuda"]:
-      cfg["cuda"] = yes_no("Enable CUDA support? (requires NVIDIA GPU with CUDA 8.0 and cuDNN)")
+      cfg["cuda"] = yes_no(
+          "Enable CUDA support? (requires NVIDIA GPU with CUDA 8.0 and cuDNN)")
 
   # generate JSON config file
   with open(".config.json", "w") as outfile:

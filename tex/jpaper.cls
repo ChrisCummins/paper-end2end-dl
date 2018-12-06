@@ -69,7 +69,7 @@ PACT Submission \#\pactsubmissionnumber -- Confidential Draft -- Do Not Distribu
 \normalfont\Large\bfseries}
 \posttitle{\par\end{center}}
 \preauthor{\begin{center}\normalfont\large%
-    \begin{tabular}[t]{c}}
+\begin{tabular}[t]{c}}
 \postauthor{\end{tabular}\par\end{center}}
 \predate{}
 \postdate{}
@@ -89,11 +89,11 @@ PACT Submission \#\pactsubmissionnumber -- Confidential Draft -- Do Not Distribu
 % subsubsection headings run-in (i.e. part of the following paragraph).
 \RequirePackage[compact]{titlesec}
 \titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection. }%
-  {0pt}{}{}
+{0pt}{}{}
 \titleformat{\subsection}[hang]{\normalfont\bfseries}{\thesubsection. }%
-  {0pt}{}{}
+{0pt}{}{}
 \titleformat{\subsubsection}[runin]{\normalfont\bfseries}{\thesubsubsection. }%
-  {0pt}{}{}
+{0pt}{}{}
 \newlength{\sectionspace}
 \setlength{\sectionspace}{1.5ex plus 0.25ex}
 \titlespacing*{\section}{0pt}{\sectionspace}{\sectionspace}
@@ -109,17 +109,17 @@ PACT Submission \#\pactsubmissionnumber -- Confidential Draft -- Do Not Distribu
 \newcommand{\bibspacing}{\setstretch{0}}
 \let\jp@bibliography\thebibliography
 \renewcommand{\thebibliography}[1]{%
-  \jp@bibliography{#1}%
-  \setlength{\itemsep}{-0.25em} \footnotesize \bibspacing%
-  \vspace{-0.25em}}
+\jp@bibliography{#1}%
+\setlength{\itemsep}{-0.25em} \footnotesize \bibspacing%
+\vspace{-0.25em}}
 % This is IEEEtran's bibliography formatting control macro.
 \def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
 \def\@bstctlcite[#1]#2{\@bsphack
-  \@for\@citeb:=#2\do{%
-    \edef\@citeb{\expandafter\@firstofone\@citeb}%
-    \if@filesw\immediate\write\csname #1\endcsname%
-      {\string\citation{\@citeb}}\fi}%
-  \@esphack}
+\@for\@citeb:=#2\do{%
+\edef\@citeb{\expandafter\@firstofone\@citeb}%
+\if@filesw\immediate\write\csname #1\endcsname%
+{\string\citation{\@citeb}}\fi}%
+\@esphack}
 
 % Settings for figures and tables. Figure captions are placed below the figure,
 % while table captions are placed above the table. All captions are sans-serif.
@@ -152,28 +152,28 @@ PACT Submission \#\pactsubmissionnumber -- Confidential Draft -- Do Not Distribu
 
 % Page numbering.
 \iftoggle{jp@pageno}{%
-  \pagestyle{plain}
-  \newcommand{\jp@mt@pageno}{}}{%
-  \pagestyle{empty}
-  \newcommand{\jp@mt@pageno}{\thispagestyle{empty}}}
+\pagestyle{plain}
+\newcommand{\jp@mt@pageno}{}}{%
+\pagestyle{empty}
+\newcommand{\jp@mt@pageno}{\thispagestyle{empty}}}
 
 % Line numbering.
 \iftoggle{jp@lineno}{%
-  \RequirePackage{lineno}
-  \renewcommand{\linenumberfont}{\normalfont\tt\small}
-  \newcommand{\jp@mt@lineno}{\linenumbers}
+\RequirePackage{lineno}
+\renewcommand{\linenumberfont}{\normalfont\tt\small}
+\newcommand{\jp@mt@lineno}{\linenumbers}
 }{%
-  \newcommand{\jp@mt@lineno}{}
+\newcommand{\jp@mt@lineno}{}
 }
 
 % Replace maketitle to invoke settings for leading, page numbering, and line
 % numbering.
 \let\jp@maketitle\maketitle
 \renewcommand{\maketitle}{%
-  \jp@maketitle%
-  \jp@mt@pageno%
-  \jp@mt@lineno%
-  \normalspacing}
+\jp@maketitle%
+\jp@mt@pageno%
+\jp@mt@lineno%
+\normalspacing}
 
 % Footnotes may not span pages.
 \interfootnotelinepenalty=10000
@@ -181,22 +181,22 @@ PACT Submission \#\pactsubmissionnumber -- Confidential Draft -- Do Not Distribu
 % Formatting for margin notes (which you may find useful during editing).
 \let\jp@marginpar\marginpar
 \renewcommand\marginpar[1]{\jp@marginpar%
-  [\raggedleft\singlespacing\footnotesize\color{red} #1]%
-  {\raggedright\singlespacing\footnotesize\color{red} #1}}
+[\raggedleft\singlespacing\footnotesize\color{red} #1]%
+{\raggedright\singlespacing\footnotesize\color{red} #1}}
 
 \setlength{\marginparwidth}{0.65in}
 
 % Link and URL formatting.
 \iftoggle{jp@hyperref}{%
-  \RequirePackage{hyperref}
-  \hypersetup{%
-    unicode=true,%
-    pdfstartview={FitH},%
-    colorlinks=true,%
-    citecolor=red,%
-    %filecolor=black,%
-    %linkcolor=black,%
-    %urlcolor=black
+\RequirePackage{hyperref}
+\hypersetup{%
+unicode=true,%
+pdfstartview={FitH},%
+colorlinks=true,%
+citecolor=red,%
+%filecolor=black,%
+%linkcolor=black,%
+%urlcolor=black
 }}{}
 \RequirePackage{url}
 
