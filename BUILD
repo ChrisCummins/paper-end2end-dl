@@ -4,7 +4,7 @@ licenses(["restricted"])  # GPL v3
 
 exports_files([
     "LICENSE",
-    "README.md"
+    "README.md",
 ])
 
 genrule(
